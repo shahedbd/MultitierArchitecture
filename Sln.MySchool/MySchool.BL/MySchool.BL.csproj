@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MySchool.DBRepo\MySchool.DBRepo.csproj" />
+    <ProjectReference Include="..\MySchool.Model\MySchool.Model.csproj" />
+    <ProjectReference Include="..\MySchool.Shared\MySchool.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
