@@ -6,3 +6,7 @@ MSSQL Conn
 Multiple data insert:
 https://github.com/shahedbd/LOOPINSQL
 
+
+Install-Package System.Data.SqlClient -Version 4.5.1
+Install-Package System.Configuration.ConfigurationManager -Version 4.5.0
+

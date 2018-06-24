@@ -73,6 +73,7 @@ namespace MySchool.DBRepo.Infrastructure
             var list = new List<T>();
             try
             {
+                conn.Open();
                 if (conn.State == ConnectionState.Broken || conn.State == ConnectionState.Closed)
                 {
                     conn.Open();
