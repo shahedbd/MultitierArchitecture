@@ -45,6 +45,7 @@ namespace MySchool.Client.Controllers
             oPersonalInfo = aPICallingPersonalInfo.GetByID(id);
             return View("Edit", oPersonalInfo);
         }
+
         [HttpPost]
         public ActionResult Edit(PersonalInfo personalInfo)
         {
@@ -52,9 +53,18 @@ namespace MySchool.Client.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Delete(int id)
+        [HttpGet]
+        public ActionResult Delete(long id)
         {
-            aPICallingPersonalInfo.Delete(id);
+            PersonalInfo oPersonalInfo = new PersonalInfo();
+            oPersonalInfo = aPICallingPersonalInfo.GetByID(id);
+            return View("Delete", oPersonalInfo);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(PersonalInfo personalInfo)
+        {
+            aPICallingPersonalInfo.Delete(personalInfo);
             return RedirectToAction("Index");
         }
 

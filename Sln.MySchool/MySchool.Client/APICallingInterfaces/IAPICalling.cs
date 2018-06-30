@@ -9,6 +9,6 @@ namespace MySchool.Client.APICallingInterfaces
         T GetByID(long? id);
         bool Create(T entity);
         bool Edit(T entity);
-        bool Delete(int id);
+        bool Delete(T entity);
     }
 }

@@ -64,7 +64,7 @@ namespace MySchool.API.Controllers.ServiceController
 
         [HttpPost]
         [Route("Insert")]
-        public HttpResponseMessage Insert(PersonalInfo personalInfo)
+        public HttpResponseMessage Insert([FromBody] PersonalInfo personalInfo)
         {
             HttpResponseMessage response = null;
             try
@@ -84,7 +84,7 @@ namespace MySchool.API.Controllers.ServiceController
 
         [Route("Update")]
         [HttpPut]
-        public HttpResponseMessage Update(PersonalInfo personalInfo)
+        public HttpResponseMessage Update([FromBody] PersonalInfo personalInfo)
         {
             HttpResponseMessage response = null;
             try
@@ -104,7 +104,7 @@ namespace MySchool.API.Controllers.ServiceController
 
         [Route("Delete/{id:long}")]
         [HttpDelete]
-        public HttpResponseMessage Delete(PersonalInfo personalInfo)
+        public HttpResponseMessage Delete([FromBody] PersonalInfo personalInfo)
         {
             HttpResponseMessage response = null;
             try

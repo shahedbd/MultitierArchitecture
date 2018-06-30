@@ -104,14 +104,14 @@ namespace MySchool.Client.APICalling
             }
         }
 
-        public bool Delete(int id)
+        public bool Delete(PersonalInfo personalInfo)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(Base_URL);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = client.DeleteAsync("Delete/" + id).Result;
+                HttpResponseMessage response = client.PutAsJsonAsync("Delete", personalInfo).Result;
                 return response.IsSuccessStatusCode;
             }
             catch (Exception ex)
