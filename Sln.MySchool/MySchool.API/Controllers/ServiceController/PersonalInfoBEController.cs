@@ -1,5 +1,6 @@
 ﻿using FXTF.CRM.Web.Admin.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using MySchool.API.Controllers.Interfaces;
 using MySchool.BL.Interfaces;
 using MySchool.Model.DBModel;
 using MySchool.Shared.Log;
@@ -9,11 +10,11 @@ using System.Net.Http;
 namespace MySchool.API.Controllers.ServiceController
 {
     [Route("api/personalinfo")]
-    public class PersonalInfoController : BaseController
+    public class PersonalInfoBEController : BaseController, IAPIDBOperations<PersonalInfo>
     {
-        private readonly IPersonalInfoBL personalInfoBL = null;
+        private readonly IBusinessLogic<PersonalInfo> personalInfoBL = null;
 
-        public PersonalInfoController(ILogger _logger, IPersonalInfoBL _personalInfoBL)
+        public PersonalInfoBEController(ILogger _logger, IBusinessLogic<PersonalInfo> _personalInfoBL)
         {
             Logger = _logger;
             personalInfoBL = _personalInfoBL; //new PersonalInfoBL(Logger);
@@ -26,7 +27,7 @@ namespace MySchool.API.Controllers.ServiceController
         {
             try
             {
-                var personalInfoList = personalInfoBL.GetAllPersonalInfo();
+                var personalInfoList = personalInfoBL.GetAllBL();
 
                 if (personalInfoList == null)
                 {
@@ -49,7 +50,7 @@ namespace MySchool.API.Controllers.ServiceController
         {
             try
             {
-                var result = personalInfoBL.GetPersonalInfoByPersonalInfoID(id);
+                var result = personalInfoBL.GetByIDBL(id);
                 if (result == null)
                     return NotFound();
                 return Ok(result);
@@ -62,13 +63,13 @@ namespace MySchool.API.Controllers.ServiceController
 
 
         [HttpPost]
-        [Route("InsertPersonalInfo")]
-        public HttpResponseMessage InsertPersonalInfo(PersonalInfo personalInfo)
+        [Route("Insert")]
+        public HttpResponseMessage Insert(PersonalInfo personalInfo)
         {
             HttpResponseMessage response = null;
             try
             {
-                dynamic data = personalInfoBL.InsertPersonalInfo(personalInfo);
+                dynamic data = personalInfoBL.InsertBL(personalInfo);
                 //response = data != null ? Request.CreateResponse(HttpStatusCode.Created, "PersonalInfo saved successfully") : Request.CreateResponse(HttpStatusCode.InternalServerError, "Not created");
             }
             catch (Exception ex)
@@ -81,14 +82,14 @@ namespace MySchool.API.Controllers.ServiceController
 
 
 
-        [Route("UpdatePersonalInfo")]
+        [Route("Update")]
         [HttpPut]
-        public HttpResponseMessage UpdatePersonalInfo(PersonalInfo personalInfo)
+        public HttpResponseMessage Update(PersonalInfo personalInfo)
         {
             HttpResponseMessage response = null;
             try
             {
-                var result = personalInfoBL.UpdatePersonalInfo(personalInfo);
+                var result = personalInfoBL.UpdateBL(personalInfo);
                 //response = result != null ? Request.CreateResponse(HttpStatusCode.Created, "PersonalInfo updated successfully") : Request.CreateResponse(HttpStatusCode.InternalServerError, "Not updated");
             }
             catch (Exception ex)
@@ -101,14 +102,14 @@ namespace MySchool.API.Controllers.ServiceController
 
 
 
-        [Route("DeletePersonalInfo/{id:long}")]
+        [Route("Delete/{id:long}")]
         [HttpDelete]
-        public HttpResponseMessage DeletePersonalInfo(PersonalInfo personalInfo)
+        public HttpResponseMessage Delete(PersonalInfo personalInfo)
         {
             HttpResponseMessage response = null;
             try
             {
-                var result = personalInfoBL.DeletePersonalInfo(personalInfo);
+                var result = personalInfoBL.DeleteBL(personalInfo);
                 //response = result != null ? Request.CreateResponse(HttpStatusCode.Created, "Holiday deleted successfully") : Request.CreateResponse(HttpStatusCode.InternalServerError, "Not deleted");
             }
             catch (Exception ex)

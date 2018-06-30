@@ -15,4 +15,23 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="ResourceFiles\ResCommon.Designer.cs">
+      <DependentUpon>ResCommon.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ResourceFiles\ResCommon.resx">
+      <LastGenOutput>ResCommon.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
 </Project>

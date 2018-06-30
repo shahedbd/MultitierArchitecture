@@ -1,5 +1,5 @@
-﻿using System;
-using System.Configuration;
+﻿using MySchool.Shared.ResourceFiles;
+using System;
 using System.Data.SqlClient;
 
 namespace MySchool.DBRepo.Infrastructure
@@ -11,7 +11,8 @@ namespace MySchool.DBRepo.Infrastructure
             SqlConnection conn = null;
             try
             {
-                conn = new SqlConnection(ConfigurationManager.ConnectionStrings["mssqlConnLocal"].ConnectionString);
+                conn = new SqlConnection(ResCommon.MSSQLConnStringLocal.ToString());
+                //conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
                 //conn = new SqlConnection(ConfigurationManager.ConnectionStrings["mssqlConnDev"].ConnectionString);
                 //conn = new SqlConnection(ConfigurationManager.ConnectionStrings["mssqlConnSTG"].ConnectionString);
                 //conn = new SqlConnection(ConfigurationManager.ConnectionStrings["mssqlConnProd"].ConnectionString);

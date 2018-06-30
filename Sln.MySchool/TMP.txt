@@ -10,3 +10,5 @@ https://github.com/shahedbd/LOOPINSQL
 Install-Package System.Data.SqlClient -Version 4.5.1
 Install-Package System.Configuration.ConfigurationManager -Version 4.5.0
 
+Install-Package Newtonsoft.Json -Version 11.0.2
+

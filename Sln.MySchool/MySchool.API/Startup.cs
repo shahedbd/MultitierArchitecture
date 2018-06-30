@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MySchool.BL.Implementations;
 using MySchool.BL.Interfaces;
+using MySchool.Model.DBModel;
 using MySchool.Shared.Log;
 
 namespace MySchool.API
@@ -24,7 +25,7 @@ namespace MySchool.API
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // Add application services.
-            services.AddTransient<IPersonalInfoBL, PersonalInfoBL>();
+            services.AddTransient<IBusinessLogic<PersonalInfo>, PersonalInfoBL>();
             services.AddTransient<ILogger, Logger>();
 
         }

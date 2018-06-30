@@ -6,7 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MySchool.Model\MySchool.Model.csproj" />
+    <ProjectReference Include="..\MySchool.Shared\MySchool.Shared.csproj" />
   </ItemGroup>
 
 </Project>

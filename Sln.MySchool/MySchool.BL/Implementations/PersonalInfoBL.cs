@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MySchool.BL.Implementations
 {
-    public class PersonalInfoBL : IPersonalInfoBL
+    public class PersonalInfoBL : IBusinessLogic<PersonalInfo>
     {
 
         protected ILogger Logger { get; set; }
@@ -24,7 +24,7 @@ namespace MySchool.BL.Implementations
         /// </summary>
         /// <param name="entity"></param>
         /// <returns>Message</returns>
-        public async Task<string> InsertPersonalInfo(PersonalInfo entity)
+        public async Task<string> InsertBL(PersonalInfo entity)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace MySchool.BL.Implementations
         /// </summary>
         /// <param name="entity"></param>
         /// <returns>Message</returns>
-        public async Task<string> UpdatePersonalInfo(PersonalInfo entity)
+        public async Task<string> UpdateBL(PersonalInfo entity)
         {
             try
             {
@@ -62,7 +62,7 @@ namespace MySchool.BL.Implementations
         /// </summary>
         /// <param name="PersonalInfoID"></param>
         /// <returns>Message</returns>
-        public async Task<string> DeletePersonalInfo(PersonalInfo entity)
+        public async Task<string> DeleteBL(PersonalInfo entity)
         {
             try
             {
@@ -80,7 +80,7 @@ namespace MySchool.BL.Implementations
         /// Get All PersonalInfo
         /// </summary>
         /// <returns>List ofPersonalInfo</returns>
-        public async Task<IEnumerable<PersonalInfo>> GetAllPersonalInfo()
+        public async Task<IEnumerable<PersonalInfo>> GetAllBL()
         {
             try
             {
@@ -99,7 +99,7 @@ namespace MySchool.BL.Implementations
         /// </summary>
         /// <param name="PersonalInfoID"></param>
         /// <returns>PersonalInfo Object</returns>
-        public async Task<PersonalInfo> GetPersonalInfoByPersonalInfoID(long PersonalInfoID)
+        public async Task<PersonalInfo> GetByIDBL(long PersonalInfoID)
         {
             try
             {
