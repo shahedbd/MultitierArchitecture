@@ -102,8 +102,8 @@ namespace MySchool.API.Controllers.ServiceController
 
 
 
-        [Route("Delete/{id:long}")]
-        [HttpDelete]
+        [Route("Delete")]
+        [HttpPut]
         public HttpResponseMessage Delete([FromBody] PersonalInfo personalInfo)
         {
             HttpResponseMessage response = null;

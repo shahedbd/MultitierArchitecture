@@ -17,6 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySchool.API", "MySchool.AP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectNotes", "ProjectNotes", "{D0C587D0-3756-43FA-97BC-1D3147F5708D}"
 	ProjectSection(SolutionItems) = preProject
+		OLdImportantCode.txt = OLdImportantCode.txt
 		ProjectSQL.sql = ProjectSQL.sql
 		TMP.txt = TMP.txt
 	EndProjectSection
