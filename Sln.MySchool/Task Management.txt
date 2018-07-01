@@ -1,0 +1,20 @@
+
+
+
+Next task:
+
+01. Full CRUD: Done
+02. API token implementation: Pending
+03. Login Module: Pending
+04. Reporting(RDL/Crystal/Teleric): Pending
+05. Front End refactoring: Pending
+06. JS lib message implementation: Pending
+07. Enum Implementations: Pending
+
+
+
+
+
+
+
+

@@ -68,5 +68,14 @@ namespace MySchool.Client.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public ActionResult Details(long id)
+        {
+            PersonalInfo oPersonalInfo = new PersonalInfo();
+            oPersonalInfo = aPICallingPersonalInfo.GetByID(id);
+            return View("Details", oPersonalInfo);
+        }
+
+
     }
 }

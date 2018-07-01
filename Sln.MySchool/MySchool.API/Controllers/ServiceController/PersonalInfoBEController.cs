@@ -10,7 +10,7 @@ using System.Net.Http;
 namespace MySchool.API.Controllers.ServiceController
 {
     [Route("api/personalinfo")]
-    public class PersonalInfoBEController : BaseController, IAPIDBOperations<PersonalInfo>
+    public class PersonalInfoBEController : BaseController, IApiDBOperations<PersonalInfo>
     {
         private readonly IBusinessLogic<PersonalInfo> personalInfoBL = null;
 

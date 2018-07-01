@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectNotes", "ProjectNote
 	ProjectSection(SolutionItems) = preProject
 		OLdImportantCode.txt = OLdImportantCode.txt
 		ProjectSQL.sql = ProjectSQL.sql
+		Task Management.txt = Task Management.txt
 		TMP.txt = TMP.txt
 	EndProjectSection
 EndProject
